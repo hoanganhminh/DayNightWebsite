@@ -1,0 +1,921 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+* body {
+  height: 100vh;
+  overflow: hidden;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+* body .nav-bar-icon .icon {
+  width: 50px;
+  height: 50px;
+  padding: 5px;
+  border: 7px solid black;
+  border-radius: 50%;
+  position: absolute;
+  top: 45px;
+  left: 50%;
+  background-color: white;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 101;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+
+* body .nav-bar-content {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0;
+  top: 0;
+  left: -255px;
+  width: 250px;
+  height: 100vh;
+  background-color: white;
+  background-image: url("https://m.media-amazon.com/images/I/91P64mN2pBL._AC_SL1500_.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100vh;
+  border-right: 4px solid white;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+  z-index: 101;
+  /* Toggle text */
+  /* After slide changes */
+  /* Checkbox checked effect */
+  /* Checkbox checked toggle label bg color */
+  /* Checkbox vanished */
+}
+
+* body .nav-bar-content h1 {
+  color: black;
+  font-size: 55px;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: white;
+}
+
+* body .nav-bar-content .toggle {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 52px;
+  background-color: white;
+  border-radius: 30px;
+  border: 4px solid black;
+}
+
+* body .nav-bar-content p {
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+* body .nav-bar-content .toggle:after {
+  content: "";
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: black;
+  top: 2px;
+  left: 2px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+* body .nav-bar-content .checkbox:checked + .toggle::after {
+  left: 49px;
+}
+
+* body .nav-bar-content .checkbox:checked + .toggle {
+  background-color: #0051ff;
+}
+
+* body .nav-bar-content .checkbox {
+  display: none;
+}
+
+* body .btn button {
+  position: absolute;
+  right: 50px;
+  width: 60px;
+  height: 60px;
+  top: 45%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  border: 5px solid white;
+  border-radius: 50%;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+  z-index: 100;
+}
+
+* body .btn button img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+
+* body .btn button:hover {
+  cursor: pointer;
+}
+
+* body .day-main-text {
+  width: 400px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+* body .day-background .sky-clear {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  z-index: -10;
+}
+
+* body .day-background .ground {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80vh;
+  z-index: -9;
+}
+
+* body .day-sky-cloud img {
+  position: absolute;
+}
+
+* body .day-sky-cloud-left .cloud1 {
+  top: 40px;
+  width: 400px;
+  left: 20px;
+  -webkit-animation: floating 10s -3s linear infinite;
+          animation: floating 10s -3s linear infinite;
+}
+
+* body .day-sky-cloud-left .cloud2 {
+  top: 200px;
+  width: 300px;
+  left: 200px;
+  -webkit-animation: floating 10s -6s linear infinite;
+          animation: floating 10s -6s linear infinite;
+}
+
+* body .day-sky-cloud-right .cloud3 {
+  top: 80px;
+  width: 400px;
+  right: 250px;
+  z-index: 1;
+  -webkit-animation: floating 10s -2s linear infinite;
+          animation: floating 10s -2s linear infinite;
+}
+
+* body .day-sky-cloud-right .cloud4 {
+  top: 150px;
+  width: 400px;
+  right: -100px;
+  -webkit-animation: floating 10s -1s linear infinite;
+          animation: floating 10s -1s linear infinite;
+}
+
+* body .day-sky-sun .sun {
+  position: absolute;
+  top: 20px;
+  right: 80px;
+  width: 300px;
+  z-index: 0;
+  -webkit-animation: rolling-sun 20s linear infinite;
+          animation: rolling-sun 20s linear infinite;
+}
+
+@-webkit-keyframes rolling-sun {
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rolling-sun {
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+* body .day-sky-airplane .airplane {
+  position: absolute;
+  top: 200px;
+  left: -100%;
+  width: 300px;
+  z-index: -1;
+  -webkit-animation: airplane-fly 60s linear infinite;
+          animation: airplane-fly 60s linear infinite;
+  -webkit-animation-delay: 10s;
+          animation-delay: 10s;
+}
+
+* body .day-animal .butterfly {
+  position: absolute;
+  bottom: 200px;
+  left: 30px;
+  width: 300px;
+  z-index: -1;
+}
+
+* body .day-animal .bunny {
+  position: absolute;
+  bottom: 20px;
+  left: 80px;
+  width: 200px;
+  z-index: -2;
+  -webkit-animation: jumping-rabit 0.6s linear infinite, run-rabit 7s linear infinite;
+          animation: jumping-rabit 0.6s linear infinite, run-rabit 7s linear infinite;
+}
+
+* body .day-animal .reindeer {
+  position: absolute;
+  bottom: 20px;
+  right: 0;
+  width: 600px;
+}
+
+* body .night-main-text {
+  width: 400px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+* body .night-background .sky-star {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  z-index: -10;
+}
+
+* body .night-background .ground {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80vh;
+  z-index: -9;
+}
+
+* body .night-sky-cloud img {
+  position: absolute;
+}
+
+* body .night-sky-cloud-left .cloud1 {
+  top: 40px;
+  width: 400px;
+  left: 20px;
+  -webkit-animation: floating 10s -3s linear infinite;
+          animation: floating 10s -3s linear infinite;
+}
+
+* body .night-sky-cloud-left .cloud2 {
+  top: 200px;
+  width: 300px;
+  left: 200px;
+  -webkit-animation: floating 10s -6s linear infinite;
+          animation: floating 10s -6s linear infinite;
+}
+
+* body .night-sky-cloud-right .cloud3 {
+  top: 80px;
+  width: 400px;
+  right: 250px;
+  z-index: 1;
+  -webkit-animation: floating 10s -2s linear infinite;
+          animation: floating 10s -2s linear infinite;
+}
+
+* body .night-sky-cloud-right .cloud4 {
+  top: 150px;
+  width: 400px;
+  right: -100px;
+  -webkit-animation: floating 10s -1s linear infinite;
+          animation: floating 10s -1s linear infinite;
+}
+
+* body .night-sky-moon .moon {
+  position: absolute;
+  top: 20px;
+  right: 80px;
+  width: 300px;
+  z-index: 0;
+}
+
+* body .night-sky-airplane .airplane {
+  position: absolute;
+  top: 200px;
+  left: -100%;
+  width: 300px;
+  z-index: -1;
+  -webkit-animation: airplane-fly 60s linear infinite;
+          animation: airplane-fly 60s linear infinite;
+  -webkit-animation-delay: 10s;
+          animation-delay: 10s;
+}
+
+* body .night-animal .ghost {
+  position: absolute;
+  bottom: 20px;
+  left: 40px;
+  width: 400px;
+  z-index: 1;
+  -webkit-animation: run-rabit 7s linear infinite;
+          animation: run-rabit 7s linear infinite;
+}
+
+* body .night-animal .amongus {
+  position: absolute;
+  bottom: 280px;
+  right: 370px;
+  width: 100px;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  z-index: 2;
+}
+
+* body .night-animal .wolf {
+  position: absolute;
+  bottom: 20px;
+  right: 0;
+  width: 700px;
+  z-index: 1;
+}
+
+* body .ocean-main-text {
+  width: 400px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+* body .ocean-background .ocean-blue {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  z-index: -10;
+}
+
+* body .ocean-animal .shark {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  width: 500px;
+  z-index: 1;
+}
+
+* body .ocean-animal .whale {
+  position: absolute;
+  bottom: 20px;
+  right: -500px;
+  width: 500px;
+  z-index: 1;
+  -webkit-animation: swim-from-right 35s linear infinite 3s;
+          animation: swim-from-right 35s linear infinite 3s;
+}
+
+* body .ocean-animal .goldfish {
+  position: absolute;
+  bottom: 20px;
+  right: 10%;
+  width: 200px;
+  z-index: 1;
+  -webkit-animation: floating 1.5s linear infinite;
+          animation: floating 1.5s linear infinite;
+}
+
+* body .ocean-animal .crab:nth-child(4) {
+  position: absolute;
+  bottom: 70px;
+  right: 50%;
+  width: 100px;
+  z-index: 1;
+  -webkit-animation: run-rabit 10s linear infinite;
+          animation: run-rabit 10s linear infinite;
+}
+
+* body .ocean-animal .crab:nth-child(5) {
+  position: absolute;
+  bottom: 20px;
+  right: 20%;
+  width: 100px;
+  z-index: 1;
+  -webkit-animation: crab-move 10s linear infinite;
+          animation: crab-move 10s linear infinite;
+}
+
+* body .ocean-animal .crab:nth-child(3) {
+  position: absolute;
+  bottom: 150px;
+  left: 40%;
+  width: 100px;
+  z-index: 1;
+  -webkit-animation: crab-move 10s linear infinite 3s;
+          animation: crab-move 10s linear infinite 3s;
+}
+
+* body .ocean-animal .bigfish {
+  position: absolute;
+  top: -150px;
+  left: -100px;
+  width: 700px;
+  z-index: 1;
+  -webkit-animation: swim-from-left 25s linear infinite;
+          animation: swim-from-left 25s linear infinite;
+}
+
+@-webkit-keyframes airplane-fly {
+  0% {
+    left: -100%;
+  }
+  2% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes airplane-fly {
+  0% {
+    left: -100%;
+  }
+  2% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@-webkit-keyframes floating {
+  0% {
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+  }
+  50% {
+    -webkit-transform: translateY(5px);
+            transform: translateY(5px);
+  }
+  100% {
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+  }
+}
+
+@keyframes floating {
+  0% {
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+  }
+  50% {
+    -webkit-transform: translateY(5px);
+            transform: translateY(5px);
+  }
+  100% {
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+  }
+}
+
+@-webkit-keyframes left-cloud-out {
+  to {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+
+@keyframes left-cloud-out {
+  to {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+
+@-webkit-keyframes right-cloud-out {
+  to {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+}
+
+@keyframes right-cloud-out {
+  to {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+}
+
+@-webkit-keyframes left-cloud-in {
+  from {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  to {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
+@keyframes left-cloud-in {
+  from {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  to {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
+@-webkit-keyframes right-cloud-in {
+  from {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  to {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
+@keyframes right-cloud-in {
+  from {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  to {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
+@-webkit-keyframes jumping-rabit {
+  0% {
+    bottom: 20px;
+  }
+  50% {
+    bottom: 50px;
+  }
+  100% {
+    bottom: 20px;
+  }
+}
+
+@keyframes jumping-rabit {
+  0% {
+    bottom: 20px;
+  }
+  50% {
+    bottom: 50px;
+  }
+  100% {
+    bottom: 20px;
+  }
+}
+
+@-webkit-keyframes run-rabit {
+  0% {
+    left: 80px;
+  }
+  49% {
+    left: 280px;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+  50% {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+  }
+  100% {
+    left: 80px;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+  }
+}
+
+@keyframes run-rabit {
+  0% {
+    left: 80px;
+  }
+  49% {
+    left: 280px;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+  50% {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+  }
+  100% {
+    left: 80px;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+  }
+}
+
+@-webkit-keyframes animal-out {
+  0% {
+    -webkit-transform: translateY(90vh);
+            transform: translateY(90vh);
+  }
+  20% {
+    -webkit-transform: translateY(85vh);
+            transform: translateY(85vh);
+  }
+  100% {
+    -webkit-transform: translateY(180vh);
+            transform: translateY(180vh);
+  }
+}
+
+@keyframes animal-out {
+  0% {
+    -webkit-transform: translateY(90vh);
+            transform: translateY(90vh);
+  }
+  20% {
+    -webkit-transform: translateY(85vh);
+            transform: translateY(85vh);
+  }
+  100% {
+    -webkit-transform: translateY(180vh);
+            transform: translateY(180vh);
+  }
+}
+
+@-webkit-keyframes animal-in {
+  0% {
+    -webkit-transform: translateY(180vh);
+            transform: translateY(180vh);
+  }
+  100% {
+    -webkit-transform: translateY(100vh);
+            transform: translateY(100vh);
+  }
+}
+
+@keyframes animal-in {
+  0% {
+    -webkit-transform: translateY(180vh);
+            transform: translateY(180vh);
+  }
+  100% {
+    -webkit-transform: translateY(100vh);
+            transform: translateY(100vh);
+  }
+}
+
+@-webkit-keyframes planet-in {
+  from {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  to {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+
+@keyframes planet-in {
+  from {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  to {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+
+@-webkit-keyframes planet-out {
+  to {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+}
+
+@keyframes planet-out {
+  to {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+}
+
+@-webkit-keyframes blur-text-out {
+  from {
+    -webkit-filter: blur(0px);
+  }
+  to {
+    -webkit-filter: blur(80px);
+  }
+}
+
+@keyframes blur-text-out {
+  from {
+    -webkit-filter: blur(0px);
+  }
+  to {
+    -webkit-filter: blur(80px);
+  }
+}
+
+@-webkit-keyframes blur-text-in {
+  from {
+    -webkit-filter: blur(80px);
+  }
+  to {
+    -webkit-filter: blur(0px);
+  }
+}
+
+@keyframes blur-text-in {
+  from {
+    -webkit-filter: blur(80px);
+  }
+  to {
+    -webkit-filter: blur(0px);
+  }
+}
+
+@-webkit-keyframes swim-from-left {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  50% {
+    -webkit-transform: translateX(170vw);
+            transform: translateX(170vw);
+    opacity: 1;
+  }
+  51% {
+    opacity: 0;
+  }
+  55% {
+    opacity: 0;
+    -webkit-transform: translateX(-170vw);
+            transform: translateX(-170vw);
+  }
+  56% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes swim-from-left {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  50% {
+    -webkit-transform: translateX(170vw);
+            transform: translateX(170vw);
+    opacity: 1;
+  }
+  51% {
+    opacity: 0;
+  }
+  55% {
+    opacity: 0;
+    -webkit-transform: translateX(-170vw);
+            transform: translateX(-170vw);
+  }
+  56% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes swim-from-right {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  40% {
+    -webkit-transform: translateX(-170vw);
+            transform: translateX(-170vw);
+    opacity: 1;
+  }
+  41% {
+    opacity: 0;
+  }
+  55% {
+    opacity: 0;
+    -webkit-transform: translateX(170vw);
+            transform: translateX(170vw);
+  }
+  56% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes swim-from-right {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  40% {
+    -webkit-transform: translateX(-170vw);
+            transform: translateX(-170vw);
+    opacity: 1;
+  }
+  41% {
+    opacity: 0;
+  }
+  55% {
+    opacity: 0;
+    -webkit-transform: translateX(170vw);
+            transform: translateX(170vw);
+  }
+  56% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes crab-move {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  30% {
+    -webkit-transform: translateX(20vw);
+            transform: translateX(20vw);
+  }
+  70% {
+    -webkit-transform: translateX(-20vw);
+            transform: translateX(-20vw);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes crab-move {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  30% {
+    -webkit-transform: translateX(20vw);
+            transform: translateX(20vw);
+  }
+  70% {
+    -webkit-transform: translateX(-20vw);
+            transform: translateX(-20vw);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+/*# sourceMappingURL=style.css.map */

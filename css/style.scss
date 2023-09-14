@@ -1,0 +1,607 @@
+* {
+    margin: 0;
+    padding: 0;
+
+    body {
+        height: 100vh;
+        overflow: hidden;
+        transition: all 0.5s;
+        .nav-bar {
+            &-icon {
+                .icon {
+                    width: 50px;
+                    height: 50px;
+                    padding: 5px;
+                    border: 7px solid black;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: 45px;
+                    left: 50%;
+                    background-color: white;
+                    transform: translate(-50%, -50%);
+                    z-index: 101;
+                    transition: 0.5s all;
+                }
+            }
+            &-content {
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin: 0;
+                top: 0;
+                left: -255px;
+                width: 250px;
+                height: 100vh;
+                background-color: white;
+                background-image: url("https://m.media-amazon.com/images/I/91P64mN2pBL._AC_SL1500_.jpg");
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 100vh;
+                border-right: 4px solid white;
+                transition: 0.5s all;
+                z-index: 101;
+                h1 {
+                    color: black;font-size: 55px;
+                    -webkit-text-stroke-width: 1.5px;
+                    -webkit-text-stroke-color: white;
+                }
+                .toggle {
+                    position: relative;
+                    display: inline-block;
+                    width: 100px;
+                    height: 52px;
+                    background-color: white;
+                    border-radius: 30px;
+                    border: 4px solid black;
+                }
+                /* Toggle text */
+                p {
+                    margin: 0 auto;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-weight: bold;
+                }
+                /* After slide changes */
+                .toggle:after {
+                    content: "";
+                    position: absolute;
+                    width: 48px;
+                    height: 48px;
+                    border-radius: 50%;
+                    background-color: black;
+                    top: 2px;
+                    left: 2px;
+                    transition: all 0.5s;
+                }
+                /* Checkbox checked effect */
+                .checkbox:checked + .toggle::after {
+                    left: 49px;
+                }
+                /* Checkbox checked toggle label bg color */
+                .checkbox:checked + .toggle {
+                    background-color: rgb(0, 81, 255);
+                }
+                /* Checkbox vanished */
+                .checkbox {
+                    display: none;
+                }
+            }
+        }
+        .btn {
+            button {
+                position: absolute;
+                right: 50px;
+                width: 60px;
+                height: 60px;
+                top: 45%;
+                transform: translateY(-50%);
+                border: 5px solid white;
+                border-radius: 50%;
+                transition: 0.5s all;
+                z-index: 100;
+                img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background-color: white;
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    transition: 0.5s all;
+                }
+            }
+            button:hover {
+                cursor: pointer;
+            }
+        }
+        .day {
+            &-main {
+                &-text {
+                    width: 400px;
+                    position: absolute;
+                    top: 40%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+            &-background {
+                .sky-clear {
+                    width: 100%;
+                    height: 100vh;
+                    position: absolute;
+                    z-index: -10;
+                }
+                .ground {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 80vh;
+                    z-index: -9;
+                }
+            }
+            &-sky {
+                &-cloud {
+                    img {
+                        position: absolute;
+                    }
+                    &-left {
+                        .cloud1 {
+                            top: 40px;
+                            width: 400px;
+                            left: 20px;
+                            animation: floating 10s -3s linear infinite;
+                        }
+                        .cloud2 {
+                            top: 200px;
+                            width: 300px;
+                            left: 200px;
+                            animation: floating 10s -6s linear infinite;
+                        }
+                    }
+                    &-right {
+                        .cloud3 {
+                            top: 80px;
+                            width: 400px;
+                            right: 250px;
+                            z-index: 1;
+                            animation: floating 10s -2s linear infinite;
+                        }
+                        .cloud4 {
+                            top: 150px;
+                            width: 400px;
+                            right: -100px;
+                            animation: floating 10s -1s linear infinite;
+                        }
+                    }
+                }
+                &-sun {
+                    .sun {
+                        position: absolute;
+                        top: 20px;
+                        right: 80px;
+                        width: 300px;
+                        z-index: 0;
+                        animation: rolling-sun 20s linear infinite;
+                    }
+                    @keyframes rolling-sun {
+                        to {
+                            transform: rotate(360deg);
+                        }
+                    }
+                }
+                &-airplane {
+                    .airplane {
+                        position: absolute;
+                        top: 200px;
+                        left: -100%;
+                        width: 300px;
+                        z-index: -1;
+                        animation: airplane-fly 60s linear infinite;
+                        animation-delay: 10s;
+                    }
+                }
+            }
+            &-animal {
+                .butterfly {
+                    position: absolute;
+                    bottom: 200px;
+                    left: 30px;
+                    width: 300px;
+                    z-index: -1;
+                }
+                .bunny {
+                    position: absolute;
+                    bottom: 20px;
+                    left: 80px;
+                    width: 200px;
+                    z-index: -2;
+                    animation: jumping-rabit 0.6s linear infinite, run-rabit 7s linear infinite;
+                }
+                .reindeer {
+                    position: absolute;
+                    bottom: 20px;
+                    right: 0;
+                    width: 600px;
+                }
+            }
+        }
+        .night {
+            &-main {
+                &-text {
+                    width: 400px;
+                    position: absolute;
+                    top: 40%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+            &-background {
+                .sky-star {
+                    width: 100%;
+                    height: 100vh;
+                    position: absolute;
+                    z-index: -10;
+                }
+                .ground {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 80vh;
+                    z-index: -9;
+                }
+            }
+            &-sky {
+                &-cloud {
+                    img {
+                        position: absolute;
+                    }
+                    &-left {
+                        .cloud1 {
+                            top: 40px;
+                            width: 400px;
+                            left: 20px;
+                            animation: floating 10s -3s linear infinite;
+                        }
+                        .cloud2 {
+                            top: 200px;
+                            width: 300px;
+                            left: 200px;
+                            animation: floating 10s -6s linear infinite;
+                        }
+                    }
+                    &-right {
+                        .cloud3 {
+                            top: 80px;
+                            width: 400px;
+                            right: 250px;
+                            z-index: 1;
+                            animation: floating 10s -2s linear infinite;
+                        }
+                        .cloud4 {
+                            top: 150px;
+                            width: 400px;
+                            right: -100px;
+                            animation: floating 10s -1s linear infinite;
+                        }
+                    }
+                }
+                &-moon {
+                    .moon {
+                        position: absolute;
+                        top: 20px;
+                        right: 80px;
+                        width: 300px;
+                        z-index: 0;
+                    }
+                }
+                &-airplane {
+                    .airplane {
+                        position: absolute;
+                        top: 200px;
+                        left: -100%;
+                        width: 300px;
+                        z-index: -1;
+                        animation: airplane-fly 60s linear infinite;
+                        animation-delay: 10s;
+                    }
+                }
+            }
+            &-animal {
+                .ghost {
+                    position: absolute;
+                    bottom: 20px;
+                    left: 40px;
+                    width: 400px;
+                    z-index: 1;
+                    animation: run-rabit 7s linear infinite;
+                }
+                .amongus {
+                    position: absolute;
+                    bottom: 280px;
+                    right: 370px;
+                    width: 100px;
+                    -webkit-transform: scaleX(-1);
+                    transform: scaleX(-1);
+                    z-index: 2;
+                }
+                .wolf {
+                    position: absolute;
+                    bottom: 20px;
+                    right: 0;
+                    width: 700px;
+                    z-index: 1;
+                }
+            }
+        }
+        .ocean {
+            &-main {
+                &-text {
+                    width: 400px;
+                    position: absolute;
+                    top: 40%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+            &-background {
+                .ocean-blue {
+                    width: 100%;
+                    height: 100vh;
+                    position: absolute;
+                    z-index: -10;
+                }
+            }
+            &-animal {
+                .shark {
+                    position: absolute;
+                    top: 20px;
+                    right: 0;
+                    width: 500px;
+                    z-index: 1;
+                }
+                .whale {
+                    position: absolute;
+                    bottom: 20px;
+                    right: -500px;
+                    width: 500px;
+                    z-index: 1;
+                    animation: swim-from-right 35s linear infinite 3s;
+                }
+                .goldfish {
+                    position: absolute;
+                    bottom: 20px;
+                    right: 10%;
+                    width: 200px;
+                    z-index: 1;
+                    animation: floating 1.5s linear infinite;
+                }
+                .crab:nth-child(4) {
+                    position: absolute;
+                    bottom: 70px;
+                    right: 50%;
+                    width: 100px;
+                    z-index: 1;
+                    animation: run-rabit 10s linear infinite;
+                }
+                .crab:nth-child(5) {
+                    position: absolute;
+                    bottom: 20px;
+                    right: 20%;
+                    width: 100px;
+                    z-index: 1;
+                    animation: crab-move 10s linear infinite;
+                }
+                .crab:nth-child(3) {
+                    position: absolute;
+                    bottom: 150px;
+                    left: 40%;
+                    width: 100px;
+                    z-index: 1;
+                    animation: crab-move 10s linear infinite 3s;
+                }
+                .bigfish {
+                    position: absolute;
+                    top: -150px;
+                    left: -100px;
+                    width: 700px;
+                    z-index: 1;
+                    animation: swim-from-left 25s linear infinite;
+                }
+            }
+        }
+    }
+    //ufo animation
+    @keyframes airplane-fly {
+        0% {
+            left: -100%;
+        }
+        2% {
+            left: 100%;
+        }
+        100% {
+            left: 100%;
+        }
+    }
+    //cloud animation
+    @keyframes floating {
+        0% {
+            transform: translateY(-5px);
+        }
+        50% {
+            transform: translateY(5px);
+        }
+        100% {
+            transform: translateY(-5px);
+        }
+    }
+    @keyframes left-cloud-out {
+        to {
+            transform: translateX(-100%);
+        }
+    }
+    @keyframes right-cloud-out {
+        to {
+            transform: translateX(100%);
+        }
+    }
+    @keyframes left-cloud-in {
+        from {
+            transform: translateX(-100%);
+        }
+        to {
+            transform: translateX(0%);
+        }
+    }
+    @keyframes right-cloud-in {
+        from {
+            transform: translateX(100%);
+        }
+        to {
+            transform: translateX(0%);
+        }
+    }
+    //rabit animation
+    @keyframes jumping-rabit {
+        0% {
+            bottom: 20px;
+        }
+        50% {
+            bottom: 50px;
+        }
+        100% {
+            bottom: 20px;
+        }
+    }
+    @keyframes run-rabit {
+        0% {
+            left: 80px;
+        }
+        49% {
+            left: 280px;
+            -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+        }
+        50% {
+            -webkit-transform: scaleX(-1);
+            transform: scaleX(-1);
+        }
+        100% {
+            left: 80px;
+            -webkit-transform: scaleX(-1);
+            transform: scaleX(-1);
+        }
+    }
+    //all animal
+    @keyframes animal-out {
+        0% {
+            transform: translateY(90vh);
+        }
+        20% {
+            transform: translateY(85vh);
+        }
+        100% {
+            transform: translateY(180vh);
+        }
+    }
+    @keyframes animal-in {
+        0% {
+            transform: translateY(180vh);
+        }
+        100% {
+            transform: translateY(100vh);
+        }
+    }
+    //sun and moon animation
+    @keyframes planet-in {
+        from {
+            transform: translateY(-100%);
+        }
+        to {
+            transform: translateY(0%);
+        }
+    }
+    @keyframes planet-out {
+        to {
+            transform: translateY(-100%);
+        }
+    }
+    //main text animation
+    @keyframes blur-text-out {
+        from {
+            -webkit-filter: blur(0px);
+        }
+        to {
+            -webkit-filter: blur(80px);
+        }
+    }
+    @keyframes blur-text-in {
+        from {
+            -webkit-filter: blur(80px);
+        }
+        to {
+            -webkit-filter: blur(0px);
+        }
+    }
+    //fish swimming
+    @keyframes swim-from-left {
+        0% {
+            transform: translateX(0);
+        }
+        50% {
+            transform: translateX(170vw);
+            opacity: 1;
+        }
+        51% {
+            opacity: 0;
+        }
+        55% {
+            opacity: 0;
+            transform: translateX(-170vw);
+        }
+        56% {
+            opacity: 1;
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+    @keyframes swim-from-right {
+        0% {
+            transform: translateX(0);
+        }
+        40% {
+            transform: translateX(-170vw);
+            opacity: 1;
+        }
+        41% {
+            opacity: 0;
+        }
+        55% {
+            opacity: 0;
+            transform: translateX(170vw);
+        }
+        56% {
+            opacity: 1;
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+    @keyframes crab-move {
+        0% {
+            transform: translateX(0);
+        }
+        30% {
+            transform: translateX(20vw);
+        }
+        70% {
+            transform: translateX(-20vw);
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+}
